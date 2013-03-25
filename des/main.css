@@ -47,11 +47,11 @@ textarea {
 
 body
 {
-    font-family: "Nevis CC";
 }
 
 h1
 {
+    font-family: "Nevis CC";
     font-weight: normal;
     font-size: 3em;
     letter-spacing: 0.1ex;
@@ -65,6 +65,11 @@ h1 span
 h1:before
 {
     content: "conven\0f0001i\0f0000on";
+}
+
+#countdown
+{
+    font-family: monospace;
 }
 
 
