@@ -1,0 +1,53 @@
+Options +FollowSymlinks
+# Options +SymLinksIfOwnerMatch
+RewriteEngine On
+# RewriteBase /
+
+# ----------------------------------------------------------------------
+# Remove WWW
+# ----------------------------------------------------------------------
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP_HOST} !^www\..+$ [NC]
+RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# ----------------------------------------------------------------------
+# 2010 Redirects
+# ----------------------------------------------------------------------
+
+## Redir from conventicon.vlnas.cz
+RewriteCond %{HTTP_HOST} vlnas.cz$
+RewriteRule ^/?$ "http\:\/\/conventicon\.cz\/" [R=301,L]
+
+## Legacy: Redirect feed
+RewriteRule ^feed(/)?$ http://feeds.feedburner.com/conventicon [R=301,L]
+
+## Legacy
+RewriteRule ^(n|epregistrace|fbpregistrace)(/registrace/)?$ / [R,L]
+
+RewriteRule ^(april|info|kontakt|program|propagace|registrace)/?(.*)$ /2010/$1/$2 [R,L]
+
+# ----------------------------------------------------------------------
+# Prevent 404 errors for non-existing redirected folders
+# ----------------------------------------------------------------------
+
+# without -MultiViews, Apache will give a 404 for a rewrite if a folder of the
+# same name does not exist.
+# webmasterworld.com/apache/3808792.htm
+
+Options -MultiViews
+
+# ----------------------------------------------------------------------
+# Custom 404 page
+# ----------------------------------------------------------------------
+
+ErrorDocument 404 /404.html
+
+# ----------------------------------------------------------------------
+# UTF-8 encoding
+# ----------------------------------------------------------------------
+
+# Use UTF-8 encoding for anything served text/plain or text/html
+AddDefaultCharset utf-8
+
+# Force UTF-8 for a number of file formats
+AddCharset utf-8 .atom .css .js .json .rss .vtt .xml
