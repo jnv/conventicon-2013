@@ -53,14 +53,15 @@ textarea {
 
 body
 {
+    font-family: "Nevis CC", Verdana, sans-serif;
 }
 
 h1
 {
-    font-family: "Nevis CC";
     font-weight: normal;
     font-size: 3em;
     letter-spacing: 0.1ex;
+    margin-top: 0.3em;
 }
 
 h1 span
@@ -75,7 +76,7 @@ h1:before
 
 #countdown
 {
-    font-family: monospace;
+    font-family: "Andale Mono", AndaleMono, monospace;;
     font-size: 2em;
 }
 
