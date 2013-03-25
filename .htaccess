@@ -27,6 +27,43 @@ RewriteRule ^(n|epregistrace|fbpregistrace)(/registrace/)?$ / [R,L]
 RewriteRule ^(april|info|kontakt|program|propagace|registrace)/?(.*)$ /2010/$1/$2 [R,L]
 
 # ----------------------------------------------------------------------
+# Proper MIME type for all files
+# ----------------------------------------------------------------------
+
+# JavaScript
+#   Normalize to standard type (it's sniffed in IE anyways)
+#   tools.ietf.org/html/rfc4329#section-7.2
+AddType application/javascript         js jsonp
+AddType application/json               json
+
+# SVG
+#   Required for svg webfonts on iPad
+#   twitter.com/FontSquirrel/status/14855840545
+AddType     image/svg+xml              svg svgz
+AddEncoding gzip                       svgz
+
+# Webfonts
+AddType application/vnd.ms-fontobject  eot
+AddType application/x-font-ttf         ttf ttc
+AddType font/opentype                  otf
+AddType application/x-font-woff        woff
+
+# Assorted types
+AddType image/x-icon                        ico
+AddType image/webp                          webp
+AddType text/cache-manifest                 appcache manifest
+AddType text/x-component                    htc
+AddType application/xml                     rss atom xml rdf
+AddType application/x-chrome-extension      crx
+AddType application/x-opera-extension       oex
+AddType application/x-xpinstall             xpi
+AddType application/octet-stream            safariextz
+AddType application/x-web-app-manifest+json webapp
+AddType text/x-vcard                        vcf
+AddType application/x-shockwave-flash       swf
+AddType text/vtt                            vtt
+
+# ----------------------------------------------------------------------
 # Prevent 404 errors for non-existing redirected folders
 # ----------------------------------------------------------------------
 
