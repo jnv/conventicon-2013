@@ -24,6 +24,7 @@ RewriteRule ^feed(/)?$ http://feeds.feedburner.com/conventicon [R=301,L]
 ## Legacy
 RewriteRule ^(n|epregistrace|fbpregistrace)(/registrace/)?$ / [R,L]
 
+RewriteRule ^program/(darkage|anime-manga|conventicon|duna)/?(.*)$ /2009/program/$1.html [R=301,L]
 RewriteRule ^(april|info|kontakt|program|propagace|registrace)/?(.*)$ /2010/$1/$2 [R,L]
 
 # ----------------------------------------------------------------------
