@@ -13,10 +13,11 @@
         var now = new Date();
         var diff = end - now;
         if (diff < 0) {
-            // handle expiry here..
-            clearInterval(timer); // stop the timer from continuing ..
+            clearInterval(timer);
+            target.innerHTML = 'LOL JK :-P';
+            document.location.href = '/2013/';
 
-            return; // break out of the function so that we do not update the counters with negative values..
+            return;
         }
         target.innerHTML = diff + getRandomInt(0, 50);
     }
