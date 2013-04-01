@@ -44,23 +44,28 @@ img {
 #content {
     margin-top: 2em;
 }
+body.p-teaser #content {
+    margin-top: 4em;
+}
 
-.teaser, .author {
+h1, p.teaser, p.author {
     text-shadow: #1A2F42 0 0 3px;
 }
 
-.teaser {
-    display: none;
+p.teaser {
     font-size: 3em;
     font-weight: bold;
 }
 
-.teaser a {
+p.teaser a {
     text-decoration: none;
 }
 
-.author {
+p.author {
     margin-top: 3em;
+}
+div.like {
+    margin-top: 1em;
 }
 
 /* ==========================================================================
